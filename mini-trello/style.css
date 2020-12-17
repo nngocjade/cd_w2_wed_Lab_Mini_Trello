@@ -186,6 +186,14 @@ header {
   font-size: 16px;
   line-height: 24px;
   color: #54585a;
+  text-emphasis: wrap;
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+  word-break: break-all;
+  word-break: break-word;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 .task:hover {
   background: #ffffff;
