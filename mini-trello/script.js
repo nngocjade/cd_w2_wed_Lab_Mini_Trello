@@ -1,3 +1,4 @@
+// ------------ADD TASK BUTTON EVENTLISTENER------------
 let myForm = document.getElementsByTagName("form")[0];
 myForm.addEventListener("submit", createTask);
 
@@ -7,8 +8,10 @@ function createTask(e) {
   if (taskValue) addTask(taskValue); //calling addTask function here
   document.getElementById("task-value").value = " ";
 }
-
-/* <li class="task fill" draggable="true">
+// ------------------------------------------------------
+// ----------------ADD TASK-------------------
+/*---------NOTES: 
+<li class="task fill" draggable="true">
               <div class="task-content">Write the weekly note</div>
               <div class="trash">&times;</div>
             </li> */
@@ -41,8 +44,10 @@ function addTask(taskValue) {
   let tasks = document.getElementById("tasks-added");
   tasks.insertBefore(task, tasks.childNodes[0]);
 }
-
-/* <ul class="tasks" id="tasks-added"> (parentNode)
+//-----------------------------------------------------------
+// ----------------REMOVE TASK----------------------
+/*--------NOTES:
+ <ul class="tasks" id="tasks-added"> (parentNode)
 <li class="task fill" draggable="true"> (parentNode)
   <div class="task-content">Write the weekly note</div> (child)
   <div class="trash">&times;</div> (Child)
@@ -57,9 +62,8 @@ function removeTask(event) {
   var task = event.target.parentNode;
   tasks.removeChild(task);
 }
-
-// DRAG & DROP
-
+//-----------------------------------------------------------
+//--------------------DRAG & DROP--------------------
 // A global variable to store the selected task
 var task;
 
