@@ -7,14 +7,18 @@ addTaskBtn.addEventListener("click", function () {
   document.getElementById("task-value").value = " ";
 });
 
-// addTaskBtn.addEventListener("keyup", function (e) {
-//   if (e.key === "Enter") {
-//     let taskValue = document.getElementById("task-value").value;
-//     if (taskValue) addTask(taskValue); //calling addTask function here
-//     return (document.getElementById("task-value").value = " ");
-//   }
+let addTaskEnter = document.getElementById("add-task");
+addTaskEnter.addEventListener("submit", createTask);
 
-// });
+function createTask(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    console.log(e);
+    let taskValue = document.getElementById("task-value").value;
+    if (taskValue) addTask(taskValue); //calling addTask function here
+    document.getElementById("task-value").value = " ";
+  }
+}
 
 /* <li class="task fill" draggable="true">
               <div class="task-content">Write the weekly note</div>
@@ -40,7 +44,7 @@ function addTask(taskValue) {
 
   let editTaskBtn = document.createElement("button");
   editTaskBtn.classList.add("edit-task-btn");
-  editTaskBtn.innerHTML = "edit";
+  editTaskBtn.innerHTML = "<i class='far fa-edit'></i>";
 
   task.appendChild(taskContent);
   task.appendChild(trash);
