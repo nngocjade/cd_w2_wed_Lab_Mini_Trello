@@ -1,0 +1,18 @@
+.edit-task-btn {
+  width: 4.5em;
+  height: 27px;
+  position: absolute;
+  top: 6px;
+  right: 40px;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  color: gray;
+  border-radius: 5px;
+}
+.edit-task-btn:hover {
+  background-color: rgb(147, 196, 156);
+  border: none;
+  /* box-shadow: 0 0 4px 1px rgb(81, 138, 92); */
+  transition: 0.2s;
+  color: white;
+}

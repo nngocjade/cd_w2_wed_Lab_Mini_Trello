@@ -38,8 +38,13 @@ function addTask(taskValue) {
   trash.innerHTML = "<i class='far fa-trash-alt'></i>";
   trash.addEventListener("click", removeTask);
 
+  let editTaskBtn = document.createElement("button");
+  editTaskBtn.classList.add("edit-task-btn");
+  editTaskBtn.innerHTML = "edit";
+
   task.appendChild(taskContent);
   task.appendChild(trash);
+  task.appendChild(editTaskBtn);
 
   let tasks = document.getElementById("tasks-added");
   tasks.insertBefore(task, tasks.childNodes[0]);
