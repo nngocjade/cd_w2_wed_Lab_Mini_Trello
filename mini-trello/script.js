@@ -1,23 +1,11 @@
-//------- ADD-TASK CLICK-LISTENER
-let addTaskBtn = document.getElementById("add-task");
+let myForm = document.getElementsByTagName("form")[0];
+myForm.addEventListener("submit", createTask);
 
-addTaskBtn.addEventListener("click", function () {
+function createTask(e) {
+  e.preventDefault();
   let taskValue = document.getElementById("task-value").value;
   if (taskValue) addTask(taskValue); //calling addTask function here
   document.getElementById("task-value").value = " ";
-});
-
-let addTaskEnter = document.getElementById("add-task");
-addTaskEnter.addEventListener("submit", createTask);
-
-function createTask(e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    console.log(e);
-    let taskValue = document.getElementById("task-value").value;
-    if (taskValue) addTask(taskValue); //calling addTask function here
-    document.getElementById("task-value").value = " ";
-  }
 }
 
 /* <li class="task fill" draggable="true">
@@ -108,13 +96,14 @@ function dragDrop(event) {
   }
   // event represents the column
   // Add the task to the second element of the column which is the <ul> element (the first one is a <h1>)
-  event.target.childNodes[1].append(task);
+  event.target.childNodes[3].append(task);
 }
 
 var dropzones = document.querySelectorAll(".dropzone");
 
 for (let index = 0; index < dropzones.length; index++) {
   const dropzone = dropzones[index];
+  console.log(dropzone);
   dropzone.addEventListener("dragenter", dragEnter);
   dropzone.addEventListener("dragover", dragOver);
   dropzone.addEventListener("dragleave", dragLeave);
