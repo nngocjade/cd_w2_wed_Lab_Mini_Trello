@@ -17,25 +17,32 @@ function createTask(e) {
             </li> */
 
 function addTask(taskValue) {
+  // <li class="task fill editMode" draggable="true">...</li>
   let task = document.createElement("li");
   task.classList.add("task");
   task.classList.add("fill");
+  // task.classList.add("editMode");
   task.setAttribute("draggable", "true");
+  // task.setAttribute("id", "editMode");
   task.addEventListener("dragstart", dragStart);
   task.addEventListener("dragend", dragEnd);
 
+  // <div class="task-content">taskValue</div>
   let taskContent = document.createElement("div");
   taskContent.classList.add("task-content");
   taskContent.innerText = taskValue;
 
+  // <div class="trash"><i class='far fa-trash-alt'></i></div>
   let trash = document.createElement("div");
   trash.classList.add("trash");
   trash.innerHTML = "<i class='far fa-trash-alt'></i>";
   trash.addEventListener("click", removeTask);
 
+  //<button class="edit-task-btn"><i class='far fa-edit'></i></button>
   let editTaskBtn = document.createElement("button");
   editTaskBtn.classList.add("edit-task-btn");
   editTaskBtn.innerHTML = "<i class='far fa-edit'></i>";
+  editTaskBtn.addEventListener("click", editTask);
 
   task.appendChild(taskContent);
   task.appendChild(trash);
@@ -45,6 +52,22 @@ function addTask(taskValue) {
   tasks.insertBefore(task, tasks.childNodes[0]);
 }
 //-----------------------------------------------------------
+//-------------------EDIT TASK---------------------
+//Edit an existing task
+
+function editTask(event) {
+  // Access the li element which is the direct parent  var task = event.target.;
+  console.log(event);
+
+  var taskContent = event.target.parentNode.parentNode.childNodes[0];
+  console.log("taskContent");
+  console.log(taskContent);
+  let textValue = taskContent.innerText;
+  taskContent.innerHTML = `<input value=${textValue} />`;
+  // taskContent.addEventListener("keyu")
+}
+
+//-------------------------------------------------
 // ----------------REMOVE TASK----------------------
 /*--------NOTES:
  <ul class="tasks" id="tasks-added"> (parentNode)
@@ -57,9 +80,10 @@ function addTask(taskValue) {
 function removeTask(event) {
   // event represents the remove button
   // Access the <ul> list by moving 2 levels up
-  var tasks = event.target.parentNode.parentNode;
+  var tasks = event.target.parentNode.parentNode.parentNode;
+  console.log(tasks);
   // Access the <li> element which is the direct parent
-  var task = event.target.parentNode;
+  var task = event.target.parentNode.parentNode;
   tasks.removeChild(task);
 }
 //-----------------------------------------------------------
