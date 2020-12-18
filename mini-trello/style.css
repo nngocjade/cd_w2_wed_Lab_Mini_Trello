@@ -222,3 +222,7 @@ header {
 .invisible {
   display: none;
 }
+
+button > * {
+  pointer-events: none;
+}

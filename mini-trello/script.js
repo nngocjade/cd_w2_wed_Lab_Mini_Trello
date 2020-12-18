@@ -57,7 +57,8 @@ function addTask(taskValue) {
 //Edit an existing task
 
 function editTask(event) {
-  var taskContent = event.target.parentNode.parentNode.childNodes[0];
+  console.log(event.target);
+  var taskContent = event.target.parentNode.childNodes[0];
   console.log("taskContent");
   console.log(taskContent);
 
@@ -69,9 +70,9 @@ function editTask(event) {
   // Clear the innerHTML or , in this case, the value of the task-content div
   taskContent.innerHTML = "";
   // replace with an input text box
-  createInputTextBox();
+  let inputBox = createInputTextBox(taskContent);
 
-  let inputBox = document.getElementById("newInputValue");
+  // let inputBox = document.getElementById("newInputValue");
   inputBox.value = textValue;
 
   taskContent.addEventListener("keyup", function (e) {
@@ -84,13 +85,14 @@ function editTask(event) {
   });
 }
 
-function createInputTextBox() {
+function createInputTextBox(taskContent) {
   let input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("id", "newInputValue");
+  input.innerHTML = "";
 
-  let newTaskContent = document.getElementById("taskContent");
-  newTaskContent.appendChild(input);
+  taskContent.appendChild(input);
+  return input;
 }
 
 //-------------------------------------------------
