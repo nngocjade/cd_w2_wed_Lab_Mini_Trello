@@ -56,19 +56,22 @@ function addTask(taskValue) {
 //Edit an existing task
 
 function editTask(event) {
-  // Access the li element which is the direct parent  var task = event.target.;
-  console.log(event);
-
   var taskContent = event.target.parentNode.parentNode.childNodes[0];
   console.log("taskContent");
   console.log(taskContent);
 
   let textValue = taskContent.innerText;
   // textValue replaced with an input box
-  taskContent.innerHTML = `<input value=${textValue} />`;
+  console.log("text is:", textValue);
+  taskContent.innerHTML = `<input type="text" id="newInputValue"  />`;
+  document.getElementById("newInputValue").value = textValue;
+
   taskContent.addEventListener("keyup", function (e) {
     if (e.key === "Enter" || e.keyCode === 13) {
-      taskContent.innerHTML = textValue.value;
+      var editedTextValue = document.getElementById("newInputValue").value;
+      console.log("editedTextValue");
+      console.log(editedTextValue);
+      taskContent.innerHTML = editedTextValue;
     }
   });
 }
