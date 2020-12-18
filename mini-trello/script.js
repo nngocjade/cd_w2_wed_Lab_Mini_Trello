@@ -62,9 +62,15 @@ function editTask(event) {
   var taskContent = event.target.parentNode.parentNode.childNodes[0];
   console.log("taskContent");
   console.log(taskContent);
+
   let textValue = taskContent.innerText;
+  // textValue replaced with an input box
   taskContent.innerHTML = `<input value=${textValue} />`;
-  // taskContent.addEventListener("keyu")
+  taskContent.addEventListener("keyup", function (e) {
+    if (e.key === "Enter" || e.keyCode === 13) {
+      taskContent.innerHTML = textValue.value;
+    }
+  });
 }
 
 //-------------------------------------------------
