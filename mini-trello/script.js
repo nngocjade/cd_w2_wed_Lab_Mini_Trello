@@ -30,6 +30,7 @@ function addTask(taskValue) {
   // <div class="task-content">taskValue</div>
   let taskContent = document.createElement("div");
   taskContent.classList.add("task-content");
+  taskContent.setAttribute("id", "taskContent");
   taskContent.innerText = taskValue;
 
   // <div class="trash"><i class='far fa-trash-alt'></i></div>
@@ -63,8 +64,15 @@ function editTask(event) {
   let textValue = taskContent.innerText;
   // textValue replaced with an input box
   console.log("text is:", textValue);
-  taskContent.innerHTML = `<input type="text" id="newInputValue"  />`;
-  document.getElementById("newInputValue").value = textValue;
+
+  // taskContent.innerHTML = `<input type="text" id="newInputValue"/>`;
+  // Clear the innerHTML or , in this case, the value of the task-content div
+  taskContent.innerHTML = "";
+  // replace with an input text box
+  createInputTextBox();
+
+  let inputBox = document.getElementById("newInputValue");
+  inputBox.value = textValue;
 
   taskContent.addEventListener("keyup", function (e) {
     if (e.key === "Enter" || e.keyCode === 13) {
@@ -74,6 +82,15 @@ function editTask(event) {
       taskContent.innerHTML = editedTextValue;
     }
   });
+}
+
+function createInputTextBox() {
+  let input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("id", "newInputValue");
+
+  let newTaskContent = document.getElementById("taskContent");
+  newTaskContent.appendChild(input);
 }
 
 //-------------------------------------------------
