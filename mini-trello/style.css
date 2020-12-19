@@ -153,10 +153,10 @@ header {
 .column:first-child {
   margin-left: 0px;
 }
-.column:hover {
+/* .column:hover {
   border: 1px solid #4786ff;
-  box-shadow: 0px 4px 20px rgba(52, 152, 219, 0.4);
-}
+} */
+
 .column-title {
   margin: 16px 0px 0px 16px;
   font-family: "Lato", Arial, Helvetica, sans-serif;
@@ -221,4 +221,39 @@ header {
 }
 .invisible {
   display: none;
+}
+
+/* BACKLOG */
+#backlog {
+  background-color: rgba(223, 56, 56, 20%);
+}
+
+#backlog:hover {
+  box-shadow: 0px 4px 20px rgba(223, 56, 56, 50%);
+}
+
+/* IN PROGRESS */
+#inProgress {
+  background-color: rgba(196, 196, 1, 20%);
+}
+
+#inProgress:hover {
+  box-shadow: 0px 4px 20px rgba(196, 196, 1, 60%);
+}
+
+/* REVIEW */
+#review {
+  background-color: rgba(255, 166, 0, 0.2);
+}
+
+#review:hover {
+  box-shadow: 0px 4px 20px rgba(255, 166, 0, 60%);
+}
+
+/* DONE */
+#done {
+  background-color: rgba(0, 128, 0, 0.2);
+}
+#done:hover {
+  box-shadow: 0px 4px 20px rgba(0, 128, 0, 50%);
 }
