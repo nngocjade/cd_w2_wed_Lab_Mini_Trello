@@ -1,3 +1,10 @@
+/* Added, to fix a bug in JS*/
+/* explanation in link below */
+/* https://css-tricks.com/slightly-careful-sub-elements-clickable-things/ */
+button > * {
+  pointer-events: none;
+}
+
 /* ========================================================
                      EDIT TASK BUTTON
 ==========================================================*/
@@ -13,7 +20,7 @@
   border-radius: 5px;
 }
 .edit-task-btn:hover {
-  background-color: rgb(147, 196, 156);
+  background-color: rgb(0, 102, 255);
   border: none;
   /* box-shadow: 0 0 4px 1px rgb(81, 138, 92); */
   transition: 0.2s;
@@ -61,9 +68,25 @@
 /* HOVER */
 .move-task-btn:hover {
   opacity: 100%;
+  transition: 0.15s;
 }
 
-#backlogBtn:hover {
+/* #backlogBtn:hover {
   background-color: rgb(223, 56, 56);
   color: white;
 }
+
+#inProgressBtn:hover {
+  background-color: rgb(196, 196, 1);
+  color: white;
+}
+
+#reviewBtn:hover {
+  background-color: orange;
+  color: white;
+}
+
+#doneBtn:hover {
+  background-color: green;
+  color: white;
+} */

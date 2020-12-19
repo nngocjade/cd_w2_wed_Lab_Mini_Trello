@@ -222,10 +222,3 @@ header {
 .invisible {
   display: none;
 }
-
-/* Added, to fix a bug in JS*/
-/* explanation in link below */
-/* https://css-tricks.com/slightly-careful-sub-elements-clickable-things/ */
-button > * {
-  pointer-events: none;
-}

@@ -201,7 +201,30 @@ for (let index = 0; index < dropzones.length; index++) {
   dropzone.addEventListener("dragleave", dragLeave);
   dropzone.addEventListener("drop", dragDrop);
 }
-//-------------------------------------------------------------------
+//-----------------------------------------------------
+//------------MOVE TASK TO BACKLOG----------------------
 
-// function createReviewBtn() {}
-// function createDoneBtn() {}
+// function moveTaskToBacklog(){
+
+// }
+
+//-------------------------------------------------------------------
+// -----------MOVE TASK TO IN PROGRESS----------------
+
+// function moveTaskToInProgress(){
+
+// }
+
+//-----------------------------------------------------
+//------------MOVE TASK TO REVIEW----------------------
+
+// function moveTaskToReview(){
+
+// }
+
+//-----------------------------------------------------
+//------------MOVE TASK TO DONE----------------------
+
+// function moveTaskToDone(){
+
+// }
