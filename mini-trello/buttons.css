@@ -1,0 +1,69 @@
+/* ========================================================
+                     EDIT TASK BUTTON
+==========================================================*/
+.edit-task-btn {
+  font-size: 1.2em;
+  height: 27px;
+  position: absolute;
+  top: 6px;
+  right: 40px;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  color: gray;
+  border-radius: 5px;
+}
+.edit-task-btn:hover {
+  background-color: rgb(147, 196, 156);
+  border: none;
+  /* box-shadow: 0 0 4px 1px rgb(81, 138, 92); */
+  transition: 0.2s;
+  color: white;
+}
+
+/* ========================================================
+                MOVE TO IN PROGRESS BUTTON
+==========================================================*/
+.move-task-btn {
+  font-size: 1.2em;
+  height: 27px;
+  position: absolute;
+  background-color: transparent;
+  color: gray;
+  border-radius: 5px;
+  bottom: 6px;
+  opacity: 20%;
+}
+
+#backlogBtn {
+  border: 1px solid rgb(223, 56, 56);
+  color: rgb(223, 56, 56);
+  right: 108px;
+}
+
+#inProgressBtn {
+  border: 1px solid rgb(196, 196, 1);
+  color: rgb(196, 196, 1);
+  right: 72px;
+}
+
+#reviewBtn {
+  border: 1px solid orange;
+  color: orange;
+  right: 40px;
+}
+
+#doneBtn {
+  border: 1px solid green;
+  color: green;
+  right: 8px;
+}
+
+/* HOVER */
+.move-task-btn:hover {
+  opacity: 100%;
+}
+
+#backlogBtn:hover {
+  background-color: rgb(223, 56, 56);
+  color: white;
+}
